@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console | St. Mary's Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">ST. MARY'S <strong>ADMIN CONSOLE</strong></span>
+    </a>
+    <div>
+      <span style="font-size: 13px; font-weight: 600; margin-right: 15px;">Administrator: <strong>Dr. Elizabeth Kiprono</strong></span>
+      <a href="login.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 12px;">Sign Out</a>
+    </div>
+  </header>
+
+  <main class="section-wrap">
+    <!-- Top Action Bar -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px; flex-wrap:wrap; gap: 16px;">
+      <div>
+        <h2>School Administration & Enrolment Registry</h2>
+        <p style="color:var(--muted); font-size:13px;">Manage student admissions, fee balances, and school announcements.</p>
+      </div>
+      <div>
+        <a href="register.html" class="btn btn-primary" style="margin-right: 8px;">+ New Student</a>
+        <button id="exportCsvBtn" class="btn btn-outline">Export CSV</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-grid">
+      <div class="stat-box">
+        <span>Total Registered</span>
+        <strong id="adminTotalStudents">4</strong>
+        <small style="color:var(--muted);">Enrolled student files</small>
+      </div>
+      <div class="stat-box">
+        <span>Boarding Students</span>
+        <strong id="adminBoarders">3</strong>
+        <small style="color:var(--muted);">Residential hostels</small>
+      </div>
+      <div class="stat-box">
+        <span>Day Scholars</span>
+        <strong id="adminDay">1</strong>
+        <small style="color:var(--muted);">Commuter students</small>
+      </div>
+      <div class="stat-box">
+        <span>MS Access Database</span>
+        <strong style="font-size: 18px; color: var(--emerald);">CONNECTED</strong>
+        <small style="color:var(--muted);">tbl_Students & tbl_Marks</small>
+      </div>
+    </div>
+
+    <!-- Student Table -->
+    <div class="table-card" style="margin-bottom: 30px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; flex-wrap:wrap; gap: 10px;">
+        <h3>Student Admission Directory</h3>
+        <input type="search" id="adminSearchInput" placeholder="Search name, admission # or email..." style="max-width: 320px;">
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Adm No.</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Study Mode</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Fee Balance</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="adminStudentTbody">
+          <tr>
+            <td><strong style="font-family:'JetBrains Mono'; color:var(--blue);">SMSS/2024/0142</strong></td>
+            <td><b>Kevin Otieno Omondi</b></td>
+            <td>Form 3 Blue</td>
+            <td>Boarder</td>
+            <td>kevin.otieno@student.stmarys.ac.ke</td>
+            <td>0712 345 678</td>
+            <td>KES 4,500</td>
+            <td><button class="btn btn-outline" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing dossier for Kevin Otieno')">View</button></td>
+          </tr>
+          <tr>
+            <td><strong style="font-family:'JetBrains Mono'; color:var(--blue);">SMSS/2023/0088</strong></td>
+            <td><b>Grace Wanjiku Kamau</b></td>
+            <td>Form 4 East</td>
+            <td>Boarder</td>
+            <td>grace.wanjiku@student.stmarys.ac.ke</td>
+            <td>0723 456 789</td>
+            <td>KES 0.00</td>
+            <td><button class="btn btn-outline" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing dossier for Grace Wanjiku')">View</button></td>
+          </tr>
+          <tr>
+            <td><strong style="font-family:'JetBrains Mono'; color:var(--blue);">SMSS/2025/0215</strong></td>
+            <td><b>Brian Kiprop Cheruiyot</b></td>
+            <td>Form 2 West</td>
+            <td>Day Scholar</td>
+            <td>brian.kiprop@student.stmarys.ac.ke</td>
+            <td>0734 567 890</td>
+            <td>KES 12,000</td>
+            <td><button class="btn btn-outline" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing dossier for Brian Kiprop')">View</button></td>
+          </tr>
+          <tr>
+            <td><strong style="font-family:'JetBrains Mono'; color:var(--blue);">SMSS/2026/0301</strong></td>
+            <td><b>Amina Hassan Sheikh</b></td>
+            <td>Form 1 North</td>
+            <td>Boarder</td>
+            <td>amina.hassan@student.stmarys.ac.ke</td>
+            <td>0745 678 901</td>
+            <td>KES 0.00</td>
+            <td><button class="btn btn-outline" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing dossier for Amina Hassan')">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Post Notice Form -->
+    <div class="card">
+      <h3 style="margin-bottom:12px;">Publish School Announcement</h3>
+      <p style="color:var(--muted); font-size:13px; margin-bottom:16px;">Announcements appear immediately on the student portal and school home page.</p>
+      <form id="adminNoticeForm" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <label class="full-width">Headline / Notice Title
+          <input type="text" id="noticeTitleInput" placeholder="e.g. End of Term Reporting Dates" required>
+        </label>
+        <label>Category
+          <select id="noticeCategoryInput">
+            <option value="Academic">Academic</option>
+            <option value="Exam">Examination</option>
+            <option value="Sports">Sports & Events</option>
+            <option value="Fees">Fees & Accounts</option>
+          </select>
+        </label>
+        <label>Issued By
+          <input type="text" id="noticeAuthorInput" value="Dr. Elizabeth Kiprono (Principal)" required>
+        </label>
+        <label class="full-width">Notice Content
+          <textarea id="noticeContentInput" rows="3" placeholder="Write announcement details..." required></textarea>
+        </label>
+        <div class="full-width">
+          <button type="submit" class="btn btn-primary">Publish Announcement</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2026 St. Mary's Secondary School. All rights reserved.</div>
+    <div><a href="index.html">School Home</a> · <a href="login.html">Sign Out</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

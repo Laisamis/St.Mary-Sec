@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Registration System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Student Portal home">
+      <span class="brand-mark">SP</span>
+      <span>STUDENT <b>PORTAL</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="register.html" class="nav-link">Registration</a>
+      <a href="login.html" class= "nav-link">login</a>
+      <a href="#courses.html" class="nav-link">Courses</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero page-section">
+      <div class="hero-content">
+        <span class="eyebrow">WELCOME TO YOUR LEARNING JOURNEY</span>
+        <h1>Build your future.<br><span>Start here.</span></h1>
+        <p>Register as a student, access your portal and keep your academic information in one place.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#register">Register Now</a>
+          <a class="btn btn-outline" href="#login">Student / Admin Login</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-icon">🎓</div>
+        <h3>Your student portal</h3>
+        <p>One place for registration and student record management.</p>
+        <div class="mini-stats"><span><b>01</b> Register</span><span><b>02</b> Sign in</span><span><b>03</b> Manage</span></div>
+      </div>
+    </section>
+
+    
+   
+
+    <section id="studentDashboard" class="page-section section-wrap dashboard hidden">
+      <div class="dashboard-top"><div><span class="eyebrow">STUDENT AREA</span><h2>Welcome, <span id="studentName">Student</span></h2></div><button class="btn btn-outline logout-btn">Logout</button></div>
+      <div class="info-card"><h3>Your registration details</h3><div id="studentDetails" class="details-grid"></div></div>
+    </section>
+
+    <section id="adminDashboard" class="page-section section-wrap dashboard hidden">
+      <div class="dashboard-top"><div><span class="eyebrow">ADMINISTRATION</span><h2>Admin Dashboard</h2><p>View and manage locally saved student registrations.</p></div><button class="btn btn-outline logout-btn">Logout</button></div>
+      <div class="admin-stats"><div class="stat-card"><span>Total students</span><strong id="totalStudents">0</strong></div><div class="stat-card"><span>Displayed records</span><strong id="shownStudents">0</strong></div></div>
+      <div class="table-card">
+        <div class="table-heading"><h3>Student Records</h3><input id="studentSearch" type="search" placeholder="Search name, email or course"></div>
+        <div class="table-scroll"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Study mode</th><th>Action</th></tr></thead><tbody id="studentTableBody"></tbody></table></div>
+        <p id="emptyRecords" class="hint">No student records found.</p>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer><p>© <span id="year"></span> Student Portal. All rights reserved.</p><a href="#home">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

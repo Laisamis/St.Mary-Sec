@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration | St. Mary's Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reg-container { max-width: 680px; margin: 40px auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; color: #1e293b; }
+    .form-group input, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">ST. MARY'S <strong>SECONDARY</strong></span>
+    </a>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Curriculum</a>
+      <a href="register.html" class="active">Student Registration</a>
+      <a href="login.html">Portal Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="reg-container">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="color: var(--navy); margin-bottom: 6px;">Student Admission Registration</h2>
+        <p style="color: var(--muted); font-size: 13px;">All records are saved directly to <code>tbl_students</code> in MS Access.</p>
+      </div>
+
+      <form action="register.php" method="POST" id="studentRegForm">
+        <div class="form-group">
+          <label for="fullName">Full Student Name *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="e.g. Kevin Otieno Omondi">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth (dob) *</label>
+            <input type="date" id="dob" name="dob" required value="2008-05-14">
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender *</label>
+            <select id="gender" name="gender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Student / Guardian Email *</label>
+            <input type="email" id="email" name="email" required placeholder="kevin@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Contact Telephone *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="0712 345 678">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="classGrade">Class Level *</label>
+            <select id="classGrade" name="classGrade" required>
+              <option value="Form 1">Form 1 (Freshman)</option>
+              <option value="Form 2">Form 2 (Sophomore)</option>
+              <option value="Form 3" selected>Form 3 (Junior)</option>
+              <option value="Form 4">Form 4 (Candidate)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stream">Stream</label>
+            <select id="stream" name="stream">
+              <option value="East">East</option>
+              <option value="West">West</option>
+              <option value="Blue" selected>Blue</option>
+              <option value="North">North</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="studyMode">Study Mode</label>
+            <select id="studyMode" name="studyMode">
+              <option value="Boarder" selected>Boarder</option>
+              <option value="Day Scholar">Day Scholar</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="house">Allocated House</label>
+            <select id="house" name="house">
+              <option value="St. Patrick House">St. Patrick House</option>
+              <option value="Mother Teresa">Mother Teresa</option>
+              <option value="Archbishop Ndingi">Archbishop Ndingi</option>
+              <option value="St. Jude">St. Jude</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Portal Password *</label>
+            <input type="password" id="password" name="password" minlength="6" required placeholder="Min. 6 characters">
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" required placeholder="Re-type password">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: 10px; font-size: 15px;">
+          Submit Student Registration &rarr;
+        </button>
+
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 16px;">
+          Already registered? <a href="login.html" style="color: var(--blue); font-weight: bold;">Sign in here</a>.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer><div>© 2026 St. Mary's Secondary School. All rights reserved.</div></footer>
+</body>
+</html>

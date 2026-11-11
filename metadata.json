@@ -1,0 +1,6 @@
+{
+  "name": "St. Mary's Secondary School Portal",
+  "description": "Comprehensive school web portal with student registration, student & admin login, academic dashboards, and PHP with MS Access backend integration files.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

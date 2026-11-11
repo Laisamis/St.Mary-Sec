@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Registration System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Student Portal home">
+      <span class="brand-mark">SP</span>
+      <span>STUDENT <b>PORTAL</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="register.html" class="nav-link active">Registration</a>
+      <a href="login.html" class= "nav-link">login</a>
+      <a href="#courses.html" class="nav-link">Courses</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+<section id="register" class="page-section section-wrap">
+      <div class="section-heading">
+        <span class="eyebrow">JOIN OUR INSTITUTION</span>
+        <h2>Student Registration</h2>
+        <p>Fill in all required fields accurately. Fields marked * are compulsory.</p>
+      </div>
+      <form id="registrationForm" class="form-card">
+        <h3>Personal Information</h3>
+        <div class="form-grid">
+          <label>Full name *<input name="fullName" type="text" placeholder="Enter your full name" required></label>
+          <label>Date of birth *<input name="dob" type="date" required></label>
+          <label>Gender *
+            <select name="gender" required><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select>
+          </label>
+          <label>National ID / Passport<input name="identity" type="text" placeholder="Enter ID or passport number"></label>
+          <label>Email address *<input name="email" type="email" placeholder="name@example.com" required></label>
+          <label>Phone number *<input name="phone" type="tel" placeholder="e.g. 07XX XXX XXX" required></label>
+          <label class="full-width">Postal / residential address<textarea name="address" rows="2" placeholder="Enter your address"></textarea></label>
+        </div>
+        <h3>Academic Information</h3>
+        <div class="form-grid">
+          <label>Course / Programme *
+            <select name="course" required><option value="">Select a course</option><option>Certificate in Information Technology</option><option>Diploma in Information Technology</option><option>Diploma in Business Management</option><option>Certificate in Business Management</option><option>Diploma in Education</option><option>Other</option></select>
+          </label>
+          <label>Study mode *
+            <select name="studyMode" required><option value="">Select study mode</option><option>Full-time</option><option>Part-time</option><option>Distance learning</option></select>
+          </label>
+          <label>Previous school / institution<input name="previousSchool" type="text" placeholder="Name of previous institution"></label>
+          <label>Year of admission *
+            <select name="admissionYear" id="admissionYear" required></select>
+          </label>
+        </div>
+        <h3>Account Details</h3>
+        <div class="form-grid">
+          <label>Create password *<input name="password" type="password" minlength="6" placeholder="At least 6 characters" required></label>
+          <label>Confirm password *<input name="confirmPassword" type="password" minlength="6" placeholder="Re-enter password" required></label>
+        </div>
+        <label class="check-label"><input type="checkbox" required> I confirm that the information provided is correct.</label>
+        <button class="btn btn-primary" type="submit">Submit Registration</button>
+        <p id="registrationMessage" class="message" role="status"></p>
+      </form>
+    </section>
+</body>
+</html>

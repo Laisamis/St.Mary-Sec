@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Sign In | St. Mary's Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">ST. MARY'S <strong>SECONDARY</strong></span>
+    </a>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Curriculum & Subjects</a>
+      <a href="register.html">Student Registration</a>
+      <a href="login.html" class="active">Portal Login</a>
+    </nav>
+  </header>
+
+  <main class="section-wrap" style="max-width: 480px;">
+    <div class="card" style="padding: 32px;">
+      <h2 style="color:var(--navy); margin-bottom: 6px; text-align:center;">Portal Login</h2>
+      <p style="color:var(--muted); font-size:13px; text-align:center; margin-bottom: 24px;">Sign in to access your individualized student dashboard</p>
+
+      <!-- Submits to login.php which queries tbl_students -->
+      <form action="login.php" method="POST" id="portalLoginForm">
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; font-size:13px; font-weight:bold; margin-bottom:4px;">Login Role</label>
+          <select name="role" id="roleSelect" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:6px;">
+            <option value="student">Student Portal</option>
+            <option value="admin">Administrator / Staff</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; font-size:13px; font-weight:bold; margin-bottom:4px;">Admission No. or Registered Email *</label>
+          <input type="text" name="identifier" id="userInput" required placeholder="e.g. SMSS/2026/123 or student@example.com" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;">
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="display:block; font-size:13px; font-weight:bold; margin-bottom:4px;">Password *</label>
+          <input type="password" name="password" id="passInput" required placeholder="Enter password" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:6px; box-sizing:border-box;">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px;">
+          Sign In to Dashboard &rarr;
+        </button>
+      </form>
+
+      <div style="margin-top: 20px; text-align:center; font-size: 13px;">
+        New student? <a href="register.html" style="color:var(--blue); font-weight:bold;">Register for admission here</a>
+      </div>
+    </div>
+  </main>
+
+  <footer><div>© 2026 St. Mary's Secondary School. All rights reserved.</div></footer>
+</body>
+</html>

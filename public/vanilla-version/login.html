@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Sign In | St. Mary's Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">ST. MARY'S <strong>SECONDARY</strong></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Curriculum & Subjects</a>
+      <a href="register.html">Student Registration</a>
+      <a href="login.html" class="active">Portal Login</a>
+    </nav>
+  </header>
+
+  <main class="section-wrap" style="max-width: 490px;">
+    <div class="section-heading">
+      <span style="font-size: 12px; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase;">PORTAL ACCESS</span>
+      <h2>Sign In to Your Account</h2>
+      <p>Access your student report slips, class timetables, and administrative records.</p>
+    </div>
+
+    <form id="loginForm" action="login.php" method="POST" class="form-card" style="padding: 32px;">
+      <label>Login As
+        <select id="loginRole" name="role" required>
+          <option value="student">Student Portal</option>
+          <option value="admin">Administrator / Principal</option>
+        </select>
+      </label>
+
+      <label id="identityLabel" style="margin-top: 16px;">Admission Number or Email Address
+        <input id="loginEmail" name="identity" type="text" placeholder="e.g. SMSS/2024/0142 or student@stmarys.ac.ke" required>
+      </label>
+
+      <label style="margin-top: 16px;">Password
+        <input id="loginPassword" name="password" type="password" placeholder="Enter password" required>
+      </label>
+
+      <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 22px;">Sign In to Portal</button>
+      <div id="loginMessage" style="margin-top: 15px; font-weight: 700; text-align: center;"></div>
+
+      <!-- Quick Demo Logins -->
+      <div style="margin-top: 25px; padding: 16px; background: #f8fafc; border: 1px solid var(--line); border-radius: 12px; font-size: 12px; color: var(--muted); line-height: 1.7;">
+        <div style="font-weight: 800; color: var(--navy); margin-bottom: 4px;">⚡ Instant One-Click Demo Credentials:</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding: 6px; background: #fff; border-radius: 6px; border: 1px solid var(--line);">
+          <span><b>Admin:</b> admin@stmarys.ac.ke</span>
+          <button type="button" onclick="fillDemo('admin@stmarys.ac.ke', 'Admin123', 'admin')" style="background:var(--blue); color:#fff; border:none; border-radius:4px; padding:3px 8px; font-size:11px; cursor:pointer;">Use Admin</button>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding: 6px; background: #fff; border-radius: 6px; border: 1px solid var(--line);">
+          <span><b>Student:</b> kevin.otieno@student.stmarys.ac.ke</span>
+          <button type="button" onclick="fillDemo('kevin.otieno@student.stmarys.ac.ke', 'Password123', 'student')" style="background:var(--blue); color:#fff; border:none; border-radius:4px; padding:3px 8px; font-size:11px; cursor:pointer;">Use Student</button>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px; font-size: 13px;">
+        New student? <a href="register.html" style="color: var(--blue); font-weight: bold; text-decoration: none;">Register for admission here</a>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div>© 2026 St. Mary's Secondary School. All rights reserved.</div>
+    <div><a href="register.html">Admissions</a> · <a href="index.html">Home</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function fillDemo(email, pass, role) {
+      document.getElementById('loginRole').value = role;
+      document.getElementById('loginEmail').value = email;
+      document.getElementById('loginPassword').value = pass;
+    }
+  </script>
+</body>
+</html>

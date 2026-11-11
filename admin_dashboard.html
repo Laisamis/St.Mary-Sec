@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console | St. Mary's Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Session Guard: Prevent loading unless logged in as admin
+    (function() {
+      const role = sessionStorage.getItem("stMarysRole");
+      if (role !== "admin") {
+        alert("Access Restricted: Administrator login required.");
+        window.location.replace("login.html");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">ST. MARY'S <strong>ADMIN CONSOLE</strong></span>
+    </a>
+    <div>
+      <span style="font-size: 13px; font-weight: 600; margin-right: 15px;">Admin: <strong>Dr. Elizabeth Kiprono</strong></span>
+      <button onclick="logout()" class="btn btn-outline" style="padding: 6px 14px; font-size: 12px; cursor:pointer;">Sign Out</button>
+    </div>
+  </header>
+
+  <main class="section-wrap">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px; flex-wrap:wrap; gap: 16px;">
+      <div>
+        <h2>School Administration & Enrolment Registry</h2>
+        <p style="color:var(--muted); font-size:13px;">Manage student admissions, fee balances, and school records.</p>
+      </div>
+      <div>
+        <a href="register.html" class="btn btn-primary" style="margin-right: 8px;">+ New Student</a>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box"><span>Total Registered</span><strong>1,240</strong><small style="color:var(--muted);">Enrolled students</small></div>
+      <div class="stat-box"><span>Boarders</span><strong>860</strong><small style="color:var(--muted);">Hostels full</small></div>
+      <div class="stat-box"><span>Day Scholars</span><strong>380</strong><small style="color:var(--muted);">Commuter students</small></div>
+      <div class="stat-box"><span>Database Status</span><strong style="color:var(--emerald);">CONNECTED</strong><small style="color:var(--muted);">MS Access (.accdb)</small></div>
+    </div>
+
+    <div class="table-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; flex-wrap:wrap; gap: 10px;">
+        <h3>Student Admission Directory</h3>
+        <input type="search" id="adminSearchInput" placeholder="Filter students..." onkeyup="filterTable()" style="max-width: 300px; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px;">
+      </div>
+      <table>
+        <thead><tr><th>Adm No.</th><th>Student Name</th><th>Class</th><th>Mode</th><th>Email</th><th>Fee Balance</th></tr></thead>
+        <tbody id="adminStudentTbody">
+          <tr><td><b>SMSS/2024/0142</b></td><td>Kevin Otieno Omondi</td><td>Form 3 Blue</td><td>Boarder</td><td>kevin@stmarys.ac.ke</td><td>KES 4,500</td></tr>
+          <tr><td><b>SMSS/2023/0088</b></td><td>Grace Wanjiku Kamau</td><td>Form 4 East</td><td>Boarder</td><td>grace@stmarys.ac.ke</td><td>KES 0.00</td></tr>
+          <tr><td><b>SMSS/2025/0215</b></td><td>Brian Kiprop Cheruiyot</td><td>Form 2 West</td><td>Day Scholar</td><td>brian@stmarys.ac.ke</td><td>KES 12,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer><div>© 2026 St. Mary's Secondary School. All rights reserved.</div></footer>
+
+  <script>
+    function logout() {
+      sessionStorage.clear();
+      window.location.replace("login.html");
+    }
+    function filterTable() {
+      const q = document.getElementById('adminSearchInput').value.toLowerCase();
+      document.querySelectorAll('#adminStudentTbody tr').forEach(r => {
+        r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
